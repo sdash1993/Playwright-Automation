@@ -1,0 +1,69 @@
+{
+  "reports": [
+    {
+      "targets": [
+        {
+          "name": "teams",
+          "inputs": {
+            "url": "https://dpworld.webhook.office.com/webhookb2/8b846163-d9cc-4881-900c-c38eae5cbfca@2bd16c9b-7e21-4274-9c06-7919f7647bbb/IncomingWebhook/bdce7ff778484e7c9ba8fd64f0fef2a1/e91a1867-932a-4a1b-919f-911d6dc6c6f2",
+            "publish": "test-summary"
+          },
+          "extensions": [
+            {
+              "name": "report-portal-analysis",
+              "inputs": {
+                "url": "https://qa-reportportal.dpworld.com",
+                "api_key": "62b238ff-39fc-4ec7-88bb-de832b14ab4b",
+                "project": "cargoesrunner",
+                "launch_id": "{RP_LAUNCH_ID}"
+              }
+            },
+            {
+              "name": "hyperlinks",
+              "inputs": {
+                "links": [
+                  {
+                    "text": "Pipeline",
+                    "url": "{BUILD_URL}"
+                  },
+                  {
+                    "text": "ReportPortal",
+                    "url": "https://qa-reportportal.dpworld.com/ui/#cargoes_logistics_ui/launches/all/{RP_LAUNCH_ID}"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "mentions",
+              "inputs": {
+                "schedule": {
+                  "layers": [
+                    {
+                      "rotation": {
+                        "every": "week",
+                        "users": [
+                          {
+                            "name": "Aniket Patil",
+                            "teams_upn": "aniket.patil@dpworld.com"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "type": "testng",
+          "files": [
+            "build/target/testng-results.xml"
+          ]
+        }
+      ]
+    }
+  ]
+}

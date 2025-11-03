@@ -1,0 +1,9 @@
+[
+  {
+    "testCaseId": "Login-1",
+    "testCaseDescription": "Correct username and correct password should redirect to 'Home' page",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  }
+]

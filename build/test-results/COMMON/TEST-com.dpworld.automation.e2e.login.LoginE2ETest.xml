@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dpworld.automation.e2e.login.LoginE2ETest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-02T05:37:08" hostname="Administrators-MacBook-Pro.local" time="95.535">
+  <properties/>
+  <testcase name="testCorrectUserNameAndPassword[0](LoginData(super=BaseData(testCaseId=Login-1, testCaseDescription=Correct username and correct password should redirect to 'Home' page, loginData=null), userName=shuvendu.dash@dpworld.com, password=Welcome@100, errorMessage=, company=null, tenantId=null))" classname="com.dpworld.automation.e2e.login.LoginE2ETest" time="95.535"/>
+  <system-out><![CDATA[2023.08.02 11:07:13.658 [INFO] com.dpworld.automation.utils.LogUtils: Login-1  Correct username and correct password should redirect to 'Home' page test is started.
+2023.08.02 11:07:19.237 [INFO] com.dpworld.automation.utils.LogUtils: Navigating to Base URL: https://staging-argus.dpworld.com/
+2023.08.02 11:07:23.139 [INFO] com.dpworld.automation.utils.LogUtils: Enter the UserName: shuvendu.dash@dpworld.com
+2023.08.02 11:07:23.596 [INFO] com.dpworld.automation.utils.LogUtils: Getting Next Btn
+2023.08.02 11:07:46.596 [INFO] com.dpworld.automation.utils.LogUtils: clearing the password
+2023.08.02 11:07:51.783 [INFO] com.dpworld.automation.utils.LogUtils: Enter the Password: Welcome@100
+2023.08.02 11:07:55.806 [INFO] com.dpworld.automation.utils.LogUtils: Getting Next Btn
+2023.08.02 11:08:23.305 [INFO] com.dpworld.automation.utils.LogUtils: Click on Explore us Today
+2023.08.02 11:08:31.095 [INFO] com.dpworld.automation.utils.LogUtils: Check if User Profile Icon is visible in logout page
+2023.08.02 11:08:32.866 [INFO] com.dpworld.automation.utils.LogUtils: [SUCCESS] : User is logged in successfully.
+2023.08.02 11:08:41.678 [INFO] com.dpworld.automation.utils.LogUtils: User is performing login Action
+2023.08.02 11:08:41.680 [INFO] com.dpworld.automation.utils.LogUtils: Getting User display Name
+2023.08.02 11:08:42.112 [INFO] com.dpworld.automation.utils.LogUtils: Getting Logout Btn
+2023.08.02 11:08:42.540 [INFO] com.dpworld.automation.utils.LogUtils: Getting User Name Field
+2023.08.02 11:08:43.483 [INFO] com.dpworld.automation.utils.LogUtils: Getting User Name Field
+2023.08.02 11:08:43.895 [INFO] com.dpworld.automation.utils.LogUtils: [SUCCESS] : Current User is logged out successfully.
+2023.08.02 11:08:43.900 [INFO] com.dpworld.automation.utils.LogUtils: Correct username and correct password should redirect to 'Home' page test is succeed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

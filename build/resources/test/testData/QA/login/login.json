@@ -1,0 +1,9 @@
+[
+  {
+    "testCaseId": "Login-1",
+    "testCaseDescription": "Correct username and correct password should redirect to 'Home' page",
+    "userName": "hipl",
+    "password": "Dpworld@5555",
+    "errorMessage": ""
+  }
+]
