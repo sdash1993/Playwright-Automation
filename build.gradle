@@ -1,0 +1,84 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dpworld.automation'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'com.univocity:univocity-parsers:2.9.1'
+    implementation 'com.aventstack:extentreports:5.0.9'
+    implementation 'com.microsoft.playwright:playwright:1.31.0'
+    implementation 'org.slf4j:slf4j-api:2.0.6'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.testng:testng:7.4.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.6'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.5'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.5'
+    implementation 'org.json:json:20210307'
+    implementation group: 'com.epam.reportportal', name: 'client-java', version: '5.1.0-RC-7'
+    implementation group: 'com.epam.reportportal', name: 'agent-java-testng', version: '5.1.0-RC-2'
+    implementation group: 'com.epam.reportportal', name: 'logger-java-log4j', version: '5.1.0-RC-1'
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+    implementation 'org.skyscreamer:jsonassert:1.5.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.15.2'
+}
+
+task setReportProperties {
+    def prop = new Properties()
+    def date = new Date()
+    def formattedDate = date.format('yyyy-MM-dd')
+    def releaseVersion = "1.36.0"
+    def service = "RunnerV1"
+    def attributes = "Build:" + System.getProperty("buildId","")+";Env:" + System.getProperty("env","QA") + ";SuiteName:" + System.getProperty("suiteType","regression") +";Platform:"+System.getProperty("platform","")+";Branch:" + System.getProperty("branchName","master")+";Execution_Date:" + System.getProperty("executedOn",formattedDate)+";ReleaseVersion:" + System.getProperty("releaseVersion",releaseVersion)+";Service:" + System.getProperty("service",service) + ";"
+    prop.setProperty('rp.endpoint', "https://qa-reportportal.dpworld.com")
+    prop.setProperty('rp.uuid', "62b238ff-39fc-4ec7-88bb-de832b14ab4b")
+    prop.setProperty('rp.launch', System.getProperty("launch", 'Runner-V1'))
+    prop.setProperty('rp.project', System.getProperty("project","cargoesrunner"))
+    prop.setProperty('rp.attributes', System.getProperty("attributes",attributes))
+    prop.setProperty('rp.convertimage', System.getProperty("grayScale","false"))
+    prop.setProperty('rp.enable', System.getProperty("enable","true"))
+    prop.setProperty('rp.reporting.async', System.getProperty("reportingAsync","true"))
+    file('src/test/resources/reportportal.properties').withOutputStream {prop.store(it, null)}
+}
+
+
+tasks.register('COMMON', Test) {
+    systemProperties = System.getProperties() as Map<String, ?>
+    def groups = System.getProperty('groups', 'regression')
+    def thread = System.getProperty('thread', '5')
+
+    useTestNG() {
+        setReportProperties
+        listeners.add("org.testng.reporters.XMLReporter")
+        listeners.add('com.dpworld.automation.listeners.RetryAnalyzer')
+        def reportPortal = System.getProperty("reportPortal", "disabled")
+        println('reportPortal:'+reportPortal)
+        if (reportPortal!=null && reportPortal.equals("enabled")) {
+            listeners << 'com.epam.reportportal.testng.ReportPortalTestNGListener'
+        }
+        reports.html.setDestination(file("$buildDir/target"))
+        def dir = System.getProperty("outputDirectory")
+        outputDirectory = dir ? file(dir) : file("$buildDir/target")
+
+        includeGroups groups
+        suites 'src/test/resources/Suites/TestNG.xml'
+        parallel 'tests'
+        threadCount thread as int
+        preserveOrder true
+    }
+}

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Argus Suite">
+    <test name="Direct MAWB with AutoSell functionality" preserve-order="true">
+        <classes>
+<!--            <class name="com.dpworld.automation.e2e.login.LoginE2ETest"/>-->
+            <class name="com.dpworld.automation.e2e.fraduRiskService.FraudRiskE2ETest"/>
+        </classes>
+    </test>
+</suite>

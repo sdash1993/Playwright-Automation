@@ -1,0 +1,100 @@
+[
+  {
+    "testCaseId": "FraudRisk-1",
+    "testCaseDescription": "fraud Monthly Incident data WithOut Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-2",
+    "testCaseDescription": "fraud Monthly Incident data with Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-3",
+    "testCaseDescription": "fraud Monthly Incident Header Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-4",
+    "testCaseDescription": "fraud Monthly Incident Zoom In And Out Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-5",
+    "testCaseDescription": "fraud Monthly Incident DownLoad Report",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-6",
+    "testCaseDescription": "frs Incident Closed With Out Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-7",
+    "testCaseDescription": "frs Incident Sorting Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-8",
+    "testCaseDescription": "frs Incident Closed Header Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-9",
+    "testCaseDescription": "frs Incident Closed ZoomInAndOut Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-10",
+    "testCaseDescription": "frs Incident Closed DownLoad Report Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-11",
+    "testCaseDescription": "frs Incident Received With Out Sorting",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-12",
+    "testCaseDescription": "frs Incident Received Sorting Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-13",
+    "testCaseDescription": "frs Incident Received ZoomInAndOut Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  },
+  {
+    "testCaseId": "FraudRisk-14",
+    "testCaseDescription": "frs Incident Received DownLoad Report Test",
+    "userName": "ARGUS.QA@dpwapps.com",
+    "password": "Dxbaq1508#$@123",
+    "errorMessage": ""
+  }
+]
